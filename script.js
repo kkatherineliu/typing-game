@@ -16,12 +16,9 @@ window.onload = () => {
 
 for (let i = 0; i < 1000; i++) { 
     // maybe change to a while loop basically for game state (while its still going on?)
+        // still need an incrementer for setTimeout
     // currently the loop basically will add words 1000 times total
-    let word;
-    do {
-        word = wordList[Math.floor(Math.random()*wordList.length)];
-    } while (wordsDisplayed.includes(word)); // avoid duplicate values bc dealing with sets
-    // basically rn two of the same word will show up on the screen and then typing only deletes one of them hmm
+    let word = wordList[Math.floor(Math.random()*wordList.length)];
 
     setTimeout(() => {
         addWord(word);
@@ -29,8 +26,6 @@ for (let i = 0; i < 1000; i++) {
     }, i*1000); // word is added every second, can maybe change in game with user input of difficulty/increase as time passes
     // requires i*1000 so that each element is 1000 APART (first one is delayed 1000, second one 2000 etc.)
     // otherwise it would just give 1000 to all of them and they'd execute together still
-    // only thing is i don't understand how the slide part works, going wayy too slow   
-
 }
 
 function enteredWord(word) {
@@ -42,8 +37,8 @@ function enteredWord(word) {
 }
 
 function addWord(word) {
-    if (document.getElementById(word) === null) { // extra security to prevent duplicates
-        let board = document.getElementById('board');
+    // if (document.getElementById(word) === null) {
+        const board = document.getElementById('board');
         // the below is better than using innerHTML
         let div = document.createElement('div'); 
         div.setAttribute('id', word);
@@ -54,18 +49,19 @@ function addWord(word) {
         board.appendChild(div);
         div.innerText = word;
         wordsDisplayed.push(word);
-    }
+    // }
 }
 
-let interval = setInterval(slide,30); //idt this is doing anything rn
+let interval = setInterval(slide,50 - wordsCompleted); // words slide quicker as the game goes on
 function slide() {
     wordsDisplayed.forEach(w => {
-        let word = document.getElementById(w);
+        const word = document.getElementById(w);
         let yCoor = parseInt(word.style.top);
-        // let root = document.querySelector(':root');
-        if (yCoor < 500) {
-            // getComputedStyle(root).getPropertyValue('--gameHeight')
-            yCoor ++;
+        const root = document.querySelector(':root');
+        const boardHeight = parseInt(getComputedStyle(root).getPropertyValue('--gameHeight'));
+        
+        if (yCoor < boardHeight) {
+            yCoor ++; // could be fun to change the speed of different words so its not the same 
             word.style.top = yCoor + 'px';
         } else {
             clearInterval(interval);
@@ -77,6 +73,6 @@ function slide() {
 }
 
 function removeWord(word) {
-    document.getElementById(word).remove(); //not the same as demo, hope this works, not sure though
+    document.getElementById(word).remove();
     wordsDisplayed = wordsDisplayed.filter((w) => {return w !== word;});
 }
