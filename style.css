@@ -1,0 +1,15 @@
+:root {
+    --gameHeight: 500;
+    --gameWidth: 500;
+}
+
+#board {
+    /* not sure how to make it proportionate to screen  */
+    height: 500px;
+    width: 500px;
+    background-color: black;
+}
+
+p {
+    font-size: 1.5rem;
+}
