@@ -1,10 +1,9 @@
 :root {
-    --gameHeight: 500px;
-    --gameWidth: 500px;
+    --gameHeight: 80vh;
+    --gameWidth: 75vw;
 }
 
 #board {
-    /* not sure how to make it proportionate to screen  */
     height: var(--gameHeight);
     width: var(--gameWidth);
     background-color: black;
@@ -12,6 +11,6 @@
 }
 
 #score {
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
