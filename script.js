@@ -1,13 +1,13 @@
-let wordsDisplayed  = new Set([]);
+let wordsDisplayed  = [];
 let wordsComplete = 0;
 // in the future maybe grab this from an API (randwords)
 let wordList = ['worth', 'even', 'tolerant', 'button', 'orange', 'dance', 'person', 'shout', 'house', 'mosque', 'snarl', 'snub', 'studio', 'destruction', 'island', 'revive', 'time', 'carbon', 'try', 'salon', 'miner', 'misplace', 'current', 'truth', 'guideline', 'conglomerate', 'employ', 'progress', 'tap', 'place', 'crisis', 'pour', 'silver', 'literature', 'seem', 'appeal', 'tray', 'location', 'stretch', 'list', 'differ', 'bag', 'disorder', 'speed', 'relinquish', 'pump', 'peak', 'offer', 'soar', 'register']; 
 
-window.onload = function(){
+window.onload = () => {
     document.getElementById('input').addEventListener('keypress', 
     function(e){
-        if (e.key === "Enter") {
-            //e.preventDefault();
+        if ((e.key === "Enter") || (e.key === " ")) {
+            e.preventDefault(); // avoids adding space into text field
             enteredWord(this.value);
             this.value = ''; 
         }
@@ -20,10 +20,10 @@ for (let i = 0; i < 1000; i++) {
     let word;
     do {
         word = wordList[Math.floor(Math.random()*wordList.length)];
-    } while (wordsDisplayed.has(word)); // avoid duplicate values bc dealing with sets
+    } while (wordsDisplayed.includes(word)); // avoid duplicate values bc dealing with sets
     // basically rn two of the same word will show up on the screen and then typing only deletes one of them hmm
 
-    setTimeout(function timer(){
+    setTimeout(() => {
         addWord(word);
         slide();
     }, i*1000); // word is added every second, can maybe change in game with user input of difficulty/increase as time passes
@@ -34,7 +34,7 @@ for (let i = 0; i < 1000; i++) {
 }
 
 function enteredWord(word) {
-    if (wordsDisplayed.has(word)) {
+    if (wordsDisplayed.includes(word)) {
         removeWord(word);
         wordsComplete ++;
         document.getElementById('score').innerText = `Words Answered: ${wordsComplete}`;
@@ -53,13 +53,13 @@ function addWord(word) {
         div.style.top = Math.floor(Math.random()*50 + 50) + 'px';
         board.appendChild(div);
         div.innerText = word;
-        wordsDisplayed.add(word);
+        wordsDisplayed.push(word);
     }
 }
 
 let interval = setInterval(slide(),30); //idt this is doing anything rn
 function slide() {
-    wordsDisplayed.forEach(function(w) {
+    wordsDisplayed.forEach(w => {
         let word = document.getElementById(w);
         let yCoor = parseInt(word.style.top);
         // let root = document.querySelector(':root');
@@ -78,7 +78,7 @@ function slide() {
 
 function removeWord(word) {
     document.getElementById(word).remove(); //not the same as demo, hope this works, not sure though
-    wordsDisplayed.delete(word);
+    wordsDisplayed = wordsDisplayed.filter((w) => {return w !== word;});
 }
 
 
