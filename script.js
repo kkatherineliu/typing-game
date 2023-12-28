@@ -1,8 +1,10 @@
 let wordsDisplayed  = [];
 let wordsComplete = 0;
-let speed = 35; // change with user input from the website after
+let speed = 30; // change with user input from the website after
 // in the future maybe grab this from an API (randwords)
+let timeDelay = 1000; // time between each word's generation
 let wordList = ['worth', 'even', 'tolerant', 'button', 'orange', 'dance', 'person', 'shout', 'house', 'mosque', 'snarl', 'snub', 'studio', 'destruction', 'island', 'revive', 'time', 'carbon', 'try', 'salon', 'miner', 'misplace', 'current', 'truth', 'guideline', 'conglomerate', 'employ', 'progress', 'tap', 'place', 'crisis', 'pour', 'silver', 'literature', 'seem', 'appeal', 'tray', 'location', 'stretch', 'list', 'differ', 'bag', 'disorder', 'speed', 'relinquish', 'pump', 'peak', 'offer', 'soar', 'register']; 
+
 const board = document.getElementById('board');
 let boardHeight = 0.8*visualViewport.height;
 let boardWidth = 0.75*visualViewport.width;
@@ -26,7 +28,11 @@ for (let i = 0; i < 1000; i++) {
 
     setTimeout(() => {
         addWord(word);
-    }, i*1000); // word is added every second, can maybe change in game with user input of difficulty/increase as time passes
+    }, i*timeDelay);
+    // word is added every second by default
+    // additional feature for later: more words generated per second as the game progresses
+
+    // note to self
     // requires i*1000 so that each element is 1000 APART (first one is delayed 1000, second one 2000 etc.)
     // otherwise it would just give 1000 to all of them and they'd execute together still
     console.log(boardWidth + '   ' +boardHeight);
@@ -36,16 +42,19 @@ for (let i = 0; i < 1000; i++) {
 
 function enteredWord(word) {
     if (wordsDisplayed.includes(word)) {
-
         // update game state
         removeWord(word);
         wordsComplete ++;
         document.getElementById('score').innerText = `Words Answered: ${wordsComplete}`;
 
         // increase the speed of words sliding down
-        speed -= 0.5;
+        speed -= 0.4;
         clearInterval(interval);
         interval = setInterval(slide,speed);
+    } else {
+        document.getElementById('input').classList.toggle('spellcheck'); 
+
+        setTimeout( () => {document.getElementById('input').classList.toggle('spellcheck')}, 300); 
     }
     // could add an else clause to do something if the word is wrong
 }
