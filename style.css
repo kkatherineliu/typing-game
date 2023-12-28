@@ -1,12 +1,12 @@
 :root {
-    --gameHeight: 500;
-    --gameWidth: 500;
+    --gameHeight: 500px;
+    --gameWidth: 500px;
 }
 
 #board {
     /* not sure how to make it proportionate to screen  */
-    height: 500px;
-    width: 500px;
+    height: var(--gameHeight);
+    width: var(--gameWidth);
     background-color: black;
 }
 
