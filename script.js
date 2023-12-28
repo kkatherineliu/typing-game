@@ -87,3 +87,6 @@ function removeWord(word) {
     document.getElementById(word).remove();
     wordsDisplayed = wordsDisplayed.filter((w) => {return w !== word;});
 }
+
+
+
