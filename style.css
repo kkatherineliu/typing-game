@@ -8,13 +8,10 @@
     height: var(--gameHeight);
     width: var(--gameWidth);
     background-color: black;
+    margin-top: 50px;
 }
 
-p {
-    font-size: 1.5rem;
-}
-
-.score {
-    font-size: 3rem;
+#score {
+    font-size: 5rem;
     font-weight: bold;
 }
