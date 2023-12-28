@@ -1,16 +1,76 @@
 :root {
-    --gameHeight: 80vh;
-    --gameWidth: 75vw;
+    --gameHeight: 79vh;
+    --gameWidth: 75vw; 
+}
+
+* {
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    margin: 1rem;
+}
+
+.right {
+    margin-left: 1rem;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 1rem;
+    height: max-content;
+}
+
+/* for smaller screens */
+@media only screen and (max-width: 640px) {
+    .wrapper{
+        display:block;
+    }
+    .left {
+        width:100%;
+    }
+    .right {
+        margin-left: auto;
+        margin-top: 1rem;
+    }
+    #board {
+        width: 100vw; 
+        /* doesn't actually work but idk why, no biggie for now */
+    }
+}
+
+#instructions {
+    white-space: pre-line;
+}
+
+.popout {
+    font-style: italic;
+    /* would be cool to make it pop out */
 }
 
 #board {
     height: var(--gameHeight);
     width: var(--gameWidth);
-    background-color: black;
-    margin-top: 50px;
+    background: linear-gradient(black, white);
+    border-radius: 20px;
+    border-bottom: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted red;
 }
 
 #score {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
+
+input {
+    margin-top: 1rem;
+    border: none;
+    border-bottom: 2px solid gray;
+    width: calc(var(--gameWidth) - 2px);
+}
+
+input:focus {outline: none;}

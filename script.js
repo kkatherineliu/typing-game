@@ -26,7 +26,6 @@ for (let i = 0; i < 1000; i++) {
 
     setTimeout(() => {
         addWord(word);
-     //   slide(); 
     }, i*1000); // word is added every second, can maybe change in game with user input of difficulty/increase as time passes
     // requires i*1000 so that each element is 1000 APART (first one is delayed 1000, second one 2000 etc.)
     // otherwise it would just give 1000 to all of them and they'd execute together still
@@ -48,6 +47,7 @@ function enteredWord(word) {
         clearInterval(interval);
         interval = setInterval(slide,speed);
     }
+    // could add an else clause to do something if the word is wrong
 }
 
 function addWord(word) {
@@ -57,8 +57,8 @@ function addWord(word) {
         div.setAttribute('id', word);
         div.style.position = 'absolute';
         div.style.color = 'white';
-        div.style.left = Math.floor(Math.random()*(boardWidth-100)) + 'px';
-        div.style.top = Math.floor(Math.random()*-20) + 'px'; // note that board margin is 50 so words generated off the board
+        div.style.left = Math.floor(Math.random()*(boardWidth-100) + 30) + 'px';
+        div.style.top = Math.floor(Math.random()*-20) + 'px';
         board.appendChild(div);
         div.innerText = word;
         wordsDisplayed.push(word);

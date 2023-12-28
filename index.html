@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="score">Words Answered: </div>
-    <div id="board"></div>
-    <br/>
-    <input type = "text" id="input" autocomplete="off" autofocus placeholder="Enter Words Here"/>
+    <div class="wrapper">
+        <div class="left">
+            <div id="board"></div>
+            <hr>
+            <input type = "text" id="input" autocomplete="off" autofocus placeholder="Enter Words Here"/>
+        </div>
+        <div class="right">
+            <div id="instructions">Hurry! <span style="font-size: x-small;">(actually it doesn't start that fast but)</span>
+                Type the words out before the reach the bottom of the screen
+                Simply type consecutive characters and hit <span class="popout">SPACE</span> or <span class="popout">ENTER</span> to get rid of them
+                
+                Happy Typing~ 
+            </div>
+            <div id="score">Words Answered: </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
