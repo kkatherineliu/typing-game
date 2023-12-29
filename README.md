@@ -14,6 +14,7 @@ Here are some of the things I learned:
 - basic stying of boxes and text
 
 Overall a fun beginner project and as a typing nerd I still find it quite fun to play. Here's a demo with some raw typing (and background) audio.
+Play it yourself right **[here](https://kkatherineliu.github.io/typing-game/)** :)) 
 
 https://github.com/kkatherineliu/typing-game/assets/80860203/238b24b0-2c8d-4333-8681-42c02fcc6c8f
 
