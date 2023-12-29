@@ -1,9 +1,9 @@
 ## It's Raining Words!
 
 This is a super simple typing game where you just have to finish typing the words before they read the dotted red line. 
-I coded this mainly to learn how to use basic HTML/CSS and JavaScript syntax from scratch so I definitely spent a lot of time reading through W3Schools to figure out what was possible
+I coded this mainly to learn how to use basic HTML/CSS and JavaScript syntax from scratch so I definitely spent a lot of time reading through W3Schools to figure out what was possible.
 
-Here are some of the things I learned
+Here are some of the things I learned:
 - using HTML DOM to access various components of the HTML or CSS files within my JS code
 - for each loops in JS
 - anonymous functions in JS
@@ -11,10 +11,12 @@ Here are some of the things I learned
 - using flexbox (even though I only had 2 side by side portions)
 - resizing to suit different screen sizes
 - using Google Fonts
+- basic stying of boxes and text
 
-Overall a fun beginner project and as a typing nerd I still find it quite fun to play.
+Overall a fun beginner project and as a typing nerd I still find it quite fun to play. Here's some casual typing ASMR and a demo
 
-<img width="902" alt="image" src="https://github.com/kkatherineliu/typing-game/assets/80860203/caa8ed42-c981-42ad-9b68-d88dc9d95f50">
+https://github.com/kkatherineliu/typing-game/assets/80860203/01643b01-ab37-4014-a93a-59b87257cfd7
+
 
 <hr>
 following "issues"
