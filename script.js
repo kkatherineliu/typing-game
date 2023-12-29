@@ -1,7 +1,6 @@
 let wordsDisplayed  = [];
 let wordsComplete = 0;
-let speed = 30; // change with user input from the website after
-// in the future maybe grab this from an API (randwords)
+let speed = 30; 
 let timeDelay = 1000; // time between each word's generation
 let wordList = ['worth', 'even', 'tolerant', 'button', 'orange', 'dance', 'person', 'shout', 'house', 'mosque', 'snarl', 'snub', 'studio', 'destruction', 'island', 'revive', 'time', 'carbon', 'try', 'salon', 'miner', 'misplace', 'current', 'truth', 'guideline', 'conglomerate', 'employ', 'progress', 'tap', 'place', 'crisis', 'pour', 'silver', 'literature', 'seem', 'appeal', 'tray', 'location', 'stretch', 'list', 'differ', 'bag', 'disorder', 'speed', 'relinquish', 'pump', 'peak', 'offer', 'soar', 'register']; 
 
@@ -21,20 +20,10 @@ window.onload = () => {
 }
 
 for (let i = 0; i < 1000; i++) { 
-    // maybe change to a while loop basically for game state (while its still going on?)
-        // still need an incrementer for setTimeout
-    // currently the loop basically will add words 1000 times total
-
-    setTimeout(() => {
-        addWord();
-    }, i*timeDelay);
-    // word is added every second by default
-    // additional feature for later: more words generated per second as the game progresses
-
-    // note to self
-    // requires i*1000 so that each element is 1000 APART (first one is delayed 1000, second one 2000 etc.)
-    // otherwise it would just give 1000 to all of them and they'd execute together still
+    setTimeout(addWord, i*timeDelay); // word is added every second by default
 }
+
+let interval = setInterval(slide, speed); // slide the words down
 
 function enteredWord(word) {
     if (wordsDisplayed.includes(word)) {
@@ -43,7 +32,7 @@ function enteredWord(word) {
         // update game state
         removeWord(word);
         wordsComplete ++;
-        document.getElementById('score').innerText = `Words Answered: ${wordsComplete}`;
+        document.getElementById('score').innerText = `Score: ${wordsComplete}`;
 
         // increase the speed of words sliding down
         speed -= 0.4;
@@ -54,13 +43,11 @@ function enteredWord(word) {
 
         setTimeout( () => {document.getElementById('input').classList.toggle('spellcheck')}, 300); 
     }
-    // could add an else clause to do something if the word is wrong
 }
 
 function addWord() {
     let word = wordList[Math.floor(Math.random()*wordList.length)];
     if (document.getElementById(word) === null) {
-        // the below is better than using innerHTML
         let div = document.createElement('div'); 
         div.setAttribute('id', word);
         div.style.position = 'absolute';
@@ -73,14 +60,13 @@ function addWord() {
     }
 }
 
-let interval = setInterval(slide, speed);
 function slide() {
     wordsDisplayed.forEach(w => {
         const word = document.getElementById(w);
         let yCoor = parseInt(word.style.top);
         
         if (yCoor < boardHeight) {
-            yCoor ++; // could be fun to change the speed of different words so its not the same 
+            yCoor ++; 
             word.style.top = yCoor + 'px';
             if (yCoor > (boardHeight - 100)) {
                 word.style.color = 'red';
@@ -88,7 +74,7 @@ function slide() {
         } else {
             clearInterval(interval);
             removeWord(w);
-            alert(`Game Over \n${wordsComplete} Answered`); // change
+            alert(`Game Over \n${wordsComplete} words answered`);
             location.reload();
         }
     });

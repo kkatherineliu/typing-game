@@ -6,7 +6,7 @@
 * {
     font-family: 'Courier Prime', monospace;
     font-family: 'Poppins', sans-serif;
-    font-size:medium;
+    font-size: medium;
 }
 
 .wrapper {
@@ -45,8 +45,9 @@
 }
 
 .popout {
-    font-style: italic;
-    /* would be cool to make it pop out */
+    border-style: outset;
+    padding: 1px;
+    background-color: #e8e8e8;
 }
 
 #board {
@@ -78,5 +79,4 @@ input:focus {outline: none;}
 
 input.spellcheck {
     border-bottom: 3px solid red;
-    /* width: calc(var(--gameWidth) - 2px); */
 }
