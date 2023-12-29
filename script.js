@@ -24,10 +24,9 @@ for (let i = 0; i < 1000; i++) {
     // maybe change to a while loop basically for game state (while its still going on?)
         // still need an incrementer for setTimeout
     // currently the loop basically will add words 1000 times total
-    let word = wordList[Math.floor(Math.random()*wordList.length)];
 
     setTimeout(() => {
-        addWord(word);
+        addWord();
     }, i*timeDelay);
     // word is added every second by default
     // additional feature for later: more words generated per second as the game progresses
@@ -35,13 +34,12 @@ for (let i = 0; i < 1000; i++) {
     // note to self
     // requires i*1000 so that each element is 1000 APART (first one is delayed 1000, second one 2000 etc.)
     // otherwise it would just give 1000 to all of them and they'd execute together still
-    console.log(boardWidth + '   ' +boardHeight);
-    console.log(parseInt(board.style.width) + '   ' +parseInt(board.style.height));
-    console.log("\n");
 }
 
 function enteredWord(word) {
     if (wordsDisplayed.includes(word)) {
+        if (Math.floor(Math.random()* 3) === 1) {addWord();}
+
         // update game state
         removeWord(word);
         wordsComplete ++;
@@ -59,7 +57,8 @@ function enteredWord(word) {
     // could add an else clause to do something if the word is wrong
 }
 
-function addWord(word) {
+function addWord() {
+    let word = wordList[Math.floor(Math.random()*wordList.length)];
     if (document.getElementById(word) === null) {
         // the below is better than using innerHTML
         let div = document.createElement('div'); 
