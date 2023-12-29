@@ -17,23 +17,18 @@ Overall a fun beginner project and as a typing nerd I still find it quite fun to
 
 https://github.com/kkatherineliu/typing-game/assets/80860203/238b24b0-2c8d-4333-8681-42c02fcc6c8f
 
+___
+### outstanding issues
+- resizing does not affect word generation live (since boardWidth and boardHeight are just initialized once at the beginning)
+    - note: is it possible to detect screen resizing to then re-calculate the height and width at that moment?
+- mobile mode gameboard display should be full width but it is stuck at 75vw
 
-<hr>
-following "issues"
-- resizing does not affect word generation 
-    - (so is it possible to detect screen resizing and then re-calculate the height and width?)
-- just kinda plain/ugly 
-- mobile mode gameboard display should be full width but its stuck at 75%
-
-future implementations (notes to self)
-- just thought of the "quirky name" so style it to fit a certain theme?
-- just to demonstrate html/css knowledge
-    - have reference links to cooler games (keybr, monkeytype, typeracer)
-    - include image or sound
-    - draggable components
-- faster word generation on top of just speed increasing
-- leaderboard display when game over 
-    - (in general better game over display, "play again" type button?)
+### possible features for the future
+- prettier UI (maybe fit the theme of raining)
+- include images or sound
+- let the game board be resizeable by dragging the corners
+- better game over display
+    - leaderboard of top 5
 - user input of "difficulty" and changing the speed/timeDelay accordingly
-- use of API to actually continuously generate "random words"
-- options for how long to play the game for (and then just diving into MonkeyType category)
+- using Random Word API to continuously generate "random words" so its not just using the same 50 words over and over again
+- options for how long to play the game for (and then just diving into basic typing game territory)
