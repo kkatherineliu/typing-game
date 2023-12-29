@@ -13,9 +13,9 @@ Here are some of the things I learned:
 - using Google Fonts
 - basic stying of boxes and text
 
-Overall a fun beginner project and as a typing nerd I still find it quite fun to play. Here's some casual typing ASMR and a demo
+Overall a fun beginner project and as a typing nerd I still find it quite fun to play. Here's some casual typing ASMR and a demo (I swear my average wpm is > 42)
 
-https://github.com/kkatherineliu/typing-game/assets/80860203/01643b01-ab37-4014-a93a-59b87257cfd7
+https://github.com/kkatherineliu/typing-game/assets/80860203/238b24b0-2c8d-4333-8681-42c02fcc6c8f
 
 
 <hr>
