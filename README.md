@@ -1,4 +1,4 @@
-#It's Raining Words!#
+## It's Raining Words!
 
 This is a super simple typing game where you just have to finish typing the words before they read the dotted red line. 
 I coded this mainly to learn how to use basic HTML/CSS and JavaScript syntax from scratch so I definitely spent a lot of time reading through W3Schools to figure out what was possible
