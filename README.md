@@ -1,5 +1,7 @@
 ## It's Raining Words!
 
+[Check it out here!](https://kkatherineliu.github.io/typing-game/) :))
+
 This is a super simple typing game where you just have to finish typing the words before they read the dotted red line. 
 I coded this mainly to learn how to use basic HTML/CSS and JavaScript syntax from scratch so I definitely spent a lot of time reading through W3Schools to figure out what was possible.
 
@@ -16,7 +18,6 @@ Here are some of the things I learned:
 - basic stying of boxes and text
 
 Overall a fun beginner project and as a typing nerd I still find it quite fun to play. Here's a demo with some raw typing (and background) audio.
-Play it yourself right **[here](https://kkatherineliu.github.io/typing-game/)** :)) 
 
 https://github.com/kkatherineliu/typing-game/assets/80860203/238b24b0-2c8d-4333-8681-42c02fcc6c8f
 
