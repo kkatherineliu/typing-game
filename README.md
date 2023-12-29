@@ -4,6 +4,8 @@ This is a super simple typing game where you just have to finish typing the word
 I coded this mainly to learn how to use basic HTML/CSS and JavaScript syntax from scratch so I definitely spent a lot of time reading through W3Schools to figure out what was possible.
 
 Here are some of the things I learned:
+
+- how to use VSCode for source control and syncing it up to GitHub
 - using HTML DOM to access various components of the HTML or CSS files within my JS code
 - for each loops in JS
 - anonymous functions in JS
