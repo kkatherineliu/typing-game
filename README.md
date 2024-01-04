@@ -13,7 +13,7 @@ Here are some of the things I learned:
 - anonymous functions in JS
 - setting time delays using setInterval and setTimeout in JS
 - using flexbox (even though I only had 2 side by side portions)
-- resizing to suit different screen sizes
+- resizing to suit different screen sizes (laptop and mobile)
 - using Google Fonts
 - basic stying of boxes and text
 
@@ -22,11 +22,6 @@ Overall a fun beginner project and as a typing nerd I still find it quite fun to
 https://github.com/kkatherineliu/typing-game/assets/80860203/238b24b0-2c8d-4333-8681-42c02fcc6c8f
 
 ___
-### outstanding issues
-- resizing does not affect word generation live (since boardWidth and boardHeight are just initialized once at the beginning)
-    - note: is it possible to detect screen resizing to then re-calculate the height and width at that moment?
-- mobile mode gameboard display should be full width but it is stuck at 75vw
-
 ### possible features for the future
 - prettier UI (maybe fit the theme of raining)
 - include images or sound
