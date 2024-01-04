@@ -1,0 +1,22 @@
+outstanding issues
+    resizing does not affect word generation live (since boardWidth and boardHeight are just initialized once at the beginning)
+        note: is it possible to detect screen resizing to then re-calculate the height and width at that moment?
+    mobile mode gameboard display should be full width but it is stuck at 75vw
+
+possible features for the future
+    prettier UI (maybe fit the theme of raining)
+    include images or sound
+    let the game board be resizeable by dragging the corners
+    better game over display
+    options for how long to play the game for (and then just diving into basic typing game territory)
+
+working on rn
+1. leaderboard of top 5 using local storage
+
+2. user input of "difficulty" and changing the speed/timeDelay accordingly
+        types of form inputs (the little toggle down to select one of 3 things OR check off one of three levels?)
+        i think we just change the initial speed accordingly for now
+            maybe change the speed decreasing interval too after idk gotta test out how it feels
+        STILL not sure how to have word frequency go up as the game progresses but
+
+3. using Random Word API to continuously generate "random words" so its not just using the same 50 words over and over again
