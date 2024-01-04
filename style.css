@@ -1,7 +1,7 @@
-:root {
+/* :root {
     --gameHeight: 79vh;
     --gameWidth: 75vw; 
-}
+} */
 
 * {
     font-family: 'Courier Prime', monospace;
@@ -28,24 +28,6 @@
     margin-top: 1rem;
 }
 
-/* for smaller screens */
-@media only screen and (max-width: 640px) {
-    .wrapper{
-        display:block;
-    }
-    .left {
-        width:100%;
-    }
-    .right {
-        margin-left: auto;
-        margin-top: 1rem;
-    }
-    #board {
-        width: 100vw; 
-        /* doesn't actually work but idk why, no biggie for now */
-    }
-}
-
 #instructions {
     white-space: pre-line;
 }
@@ -62,8 +44,8 @@ ul {
 }
 
 #board {
-    height: var(--gameHeight);
-    width: var(--gameWidth);
+    height: 79vh;
+    width: 75vw;
     background: linear-gradient(black, white);
     border-radius: 20px;
     border-bottom: none;
@@ -74,7 +56,6 @@ hr {
     border-top: 1px dotted red;
 }
 
-
 #score {
     font-weight:bolder
 }
@@ -82,11 +63,28 @@ hr {
 input {
     border: none;
     border-bottom: 2px solid gray;
-    width: calc(var(--gameWidth)/2);
+    width: calc(75vw/2);
 }
 
 input:focus {outline: none;}
 
 input.spellcheck {
     border-bottom: 3px solid red;
+}
+
+/* for smaller screens */
+@media only screen and (max-width: 640px) {
+    .wrapper{
+        display:block;
+    }
+    .left {
+        width:100%;
+    }
+    .right {
+        margin-left: auto;
+        margin-top: 1rem;
+    }
+    #board {
+        width: 100%; 
+    }
 }
